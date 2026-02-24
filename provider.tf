@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name  = "githubremotebackend"  
+    resource_group_name  = "github-actions"  
     storage_account_name = "githubremotebackend"                      
     container_name       = "test-container"                       
     key                  = "terraform.tfstate"       
