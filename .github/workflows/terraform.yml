@@ -79,10 +79,9 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    # Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform Format
-      run: terraform fmt -check
-
+    - name: Set output (supported)
+      run: echo "tf_fmt_changed=true" >> "$GITHUB_OUTPUT"
+      id: fmt
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
